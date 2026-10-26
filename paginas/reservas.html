@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservas</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Vuelve al inicio</a></li>
+        <li><a href="tarifas.html">Accede a las tarifas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h3>Horario de atención</h3>
+      <dl>
+        <dt>Lunes a viernes</dt>
+        <dd>7:00 a. m. a 7:00 p. m.</dd>
+        <dt>Sábados, domingos y festivos</dt>
+        <dd>6:00 a. m. a 2:00 p. m.</dd>
+      </dl>
+    </section>
+    <section>
+      <form action="#" method="POST">
+        <h2>Reserva tu bicicleta</h2>
+        </fieldset>
+        <p>
+          <label for="name">
+            <span>Nombre:</span>
+            <strong><abbr title="required min">*</abbr></strong>
+          </label>
+          <input type="text" id="name" name="username" required minlength="3" />
+        </p>
+        <p>
+          <label for="documento">Numero de documento</label>
+          <input type="text" id="documento" name="documento" inputmode="numeric" required pattern="[0-9]{6,10}"
+            title="Solo numeros entre 6 y 10 digitos">
+
+        </p>
+        <p>
+          <label for="mail">
+            <span>Correo electrónico:</span>
+            <strong><abbr title="required">*</abbr></strong>
+          </label>
+          <input type="email" id="mail" name="usermail" required />
+        </p>
+        <p>
+          <label for="celular">Numero de celular: </label>
+          <strong><abbr title="required">*</abbr></strong>
+          <input type="tel" id="celular" name="celular" required pattern="3[0-9]{9}"
+            title="Debe tener 10 dígitos y empezar por 3 (Ej: 3123456789)" />
+        </p>
+
+        <fieldset>
+          <legend>Plan</legend>
+          <p>
+            <label for="fecha"> Fecha de alquiler</label>
+            <input type="date" id="fecha" name="fecha de alquiler" min="2026-11-01" max="2026-12-31" required>
+          </p>
+          <p>
+            <label for="tipo de bicicleta"> Tipo de bicicleta</label>
+            <select id="tipo de bicicleta" name="Seleccione tipo de bicicleta" <option value="ninguno">Ninguno</option>
+              <option value="Urbana">Urbana</option>
+              <option value="Montaña">Montaña</option>
+              <option value="Electrica">Electrica</option>
+            </select>
+          </p>
+
+          <p>
+            <input type="radio" id="plan-hora" name="plan" value="1-hora" required>
+            <label for="plan-hora">1 hora</label>
+          </p>
+          <p>
+            <input type="radio" id="plan-medio" name="plan" value="medio-dia" required>
+            <label for="plan-medio">Medio dia (4h)</label>
+          </p>
+          <p>
+            <input type="radio" id="plan-dia" name="plan" value="dia-completo" required>
+            <label for="plan-dia">Dia completo</label>
+          </p>
+
+
+          <p>
+            <label for="cantidad">Cantidad de bicicletas</label>
+            <input type="number" id="cantidad" name="cantidad" value="1" min="1" max="6">
+          </p>
+
+          <p>
+            <label for="recorrido">Recorrido guiado</label>
+            <select id="recorrido" name="recorrido">
+              <option value="ninguno">Ninguno</option>
+              <option value="rio-y-parques">Rio y Parques</option>
+              <option value="sabores-de-barrio">Sabores de Barrio</option>
+              <option value="reto-las-palmas">Reto Las Palmas</option>
+            </select>
+          </p>
+        </fieldset>
+        <p>
+          <label for="comentarios">Comentarios</label><br>
+          <textarea id="comentarios" name="comentarios" rows="4" cols="40" maxlength="300"></textarea>
+        </p>
+        <fieldset>
+          <legend>Confirmación</legend>
+          <p>
+            <input type="checkbox" id="politicas" name="politicas" value="aceptadas" required>
+            <label for="politicas">Acepto las politicas de alquiler</label>
+          </p>
+        </fieldset>
+
+        <button type="submit">Enviar reserva</button>
+      </form>
+    </section>
+    </section>
+
+  </main>
+
+  <a href="https://wa.me/573000000000" class="whatsapp-flotante" target="_blank" rel="noopener">WhatsApp</a>
+
+  <footer>
+    <h4>Correo de contacto</h4>
+    <a href="mailto:correo.hola@ruedalibre.example">Escribenos a nuestro correo electronico</a>
+    <p><strong>2026</strong></p>
+  </footer>
+</body>
+
+</html>

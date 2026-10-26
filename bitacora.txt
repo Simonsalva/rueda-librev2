@@ -1,0 +1,31 @@
+Url. http://127.0.0.1:5500/index.html
+Protocolo: http
+Host: firefox.localhost
+Puerto: 5500
+Ruta: /index.html
+Metodo de petición: GET
+Código de estado: 304 Not Modified
+
+
+/promociones.html
+Código: 404 Not Found
+
+Roles:
+HTML: define la estructura y el contenido de la página web
+CSS:Son las cualidades visuales y esteticas de la página web, modifican el archivo HTML cuando se realiza un cambio estetico.
+JavaScript: Añade interactividad y dinamismo de la página web.
+
+
+
+Hice todo el ultimo dia
+
+
+
+
+
+
+
+
+
+
+
