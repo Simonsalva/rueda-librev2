@@ -1,35 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <title>Rueda Libre</title>
   <link rel="preconnect" href="https://googleapis.com">
   <link rel="preconnect" href="https://gstatic.com" crossorigin>
-  <link href="https://googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="CSS/styles.css">
+  <link href="https://googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-
   <!-- Menu -->
   <header>
     <nav class="menu-container">
       <ul id="menu">
-        <li><a href="index.html" class="menu-btn">Inicio</a></li>
-        <li><a href="paginas/tarifas.html" class="menu-btn">Tarifas</a></li>
-        <li><a href="paginas/reservas.html" class="menu-btn">Reservas</a></li>
+        <li><a href="index.html" class="activo">Inicio</a></li>
+        <li><a href="paginas/tarifas.html">Tarifas y rutas</a></li>
+        <li><a href="paginas/reservas.html">Reservas</a></li>
       </ul>
     </nav>
   </header>
-
   <!-- Contenido -->
   <main>
     <h1>Rueda Libre | Alquiler de bicicletas en Medellín</h1>
-    <p>Bienvenidos a Rueda Libre, donde encontraras la bicicleta de tus sueños para que te caigas pero de manera comoda.</p>
+    <p>Bienvenidos a Rueda Libre, donde encontraras la bicicleta de tus sueños para que te caigas pero de manera comoda.
+    </p>
 
     <h1>Quienes Somos</h1>
-    <p>Somos una empresa comprometida contigo. Nuestro compromiso es darte la mejor herramienta para que puedas disfrutar de este Hobbie tan maravilloso como lo es el montar bicicleta.</p>
+    <p>Somos una empresa comprometida contigo. Nuestro compromiso es darte la mejor herramienta para que puedas
+      disfrutar de este Hobbie tan maravilloso como lo es el montar bicicleta.</p>
 
     <h1>Nuestros Servicios</h1>
     <p>Ofrecemos servicios de alquiler de bicicletas en Medellín.</p>
@@ -42,7 +41,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       let pathActual = window.location.pathname;
-      
+
       if (pathActual.endsWith('/') || pathActual === '') {
         pathActual = 'index.html';
       }
@@ -59,7 +58,8 @@
   </script>
   <footer>
     <p>Correo de contacto:</p>
-    <a href="mailto:correo.hola@ruedalibre.example">Escribenos a nuestro correo electronico correo.hola@ruedalibre.example </a>
+    <a href="mailto:correo.hola@ruedalibre.example">Escribenos a nuestro correo electronico
+      correo.hola@ruedalibre.example </a>
     <p><strong>2026</strong></p>
   </footer>
 
