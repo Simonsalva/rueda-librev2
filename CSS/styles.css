@@ -1,0 +1,321 @@
+/* =================================================_
+   1. VARIABLES GLOBALES Y CONFIGURACIÓN DE MARCA
+================================================= */
+:root {
+  /* Colores de marca */
+  --verde-ruta: #1E7A4F;
+  --naranja-pedal: #F39A2B;
+  --azul-noche: #14213D;
+  --crema: #FAF6EF;
+  --gris-asfalto: #5B6470;
+  
+  /* Tipografías */
+  --fuente-titulos: 'Montserrat', sans-serif;
+  --fuente-texto: 'Open Sans', sans-serif;
+  
+  /* Escala de espaciado */
+  --espacio-sm: 0.5rem;   /* 8px aprox */
+  --espacio-md: 1rem;     /* 16px aprox */
+  --espacio-lg: 2rem;     /* 32px aprox */
+}
+
+/* ESTILOS BASE Y HERENCIA */
+/* Control del modelo de caja (MiniReto 11) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente-texto);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--gris-asfalto);
+  background-color: var(--crema);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Encabezados agrupados */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  color: var(--azul-noche);
+  margin-top: 0;
+}
+
+/* Contenedor principal centrado (MiniReto 11) */
+main {
+  max-width: 1200px; 
+  width: 90%;   
+  margin: 0 auto; 
+  padding: var(--espacio-lg) 0;
+  flex: 1;
+}
+
+/* NAVEGACIÓN Y ESTADOS */
+header {
+  background-color: var(--azul-noche);
+  padding: var(--espacio-md) var(--espacio-lg);
+}
+
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; 
+  gap: var(--espacio-lg);
+}
+
+#menu a,
+nav a {
+  color: var(--crema);
+  text-decoration: none;
+  font-weight: 600;
+  padding: var(--espacio-sm) var(--espacio-md);
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Enlace activo de la página actual */
+.menu-btn {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    display: inline-block;
+    transition: all 0.3s;
+  }
+  .menu-btn.activo {
+    color: #ff4d00;
+    font-weight: bold;
+    border-bottom: 2px solid #007bff; /* Una línea bonita abajo */
+  }
+
+/* Estados */
+#menu a:hover,
+nav a:hover {
+  color: var(--naranja-pedal);
+}
+
+#menu a:focus,
+nav a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--naranja-pedal);
+  outline-offset: 2px;
+}
+
+/* COMPONENTES: TARJETAS Y SECCIONES */
+.tarjeta-servicio {
+  background-color: var(--crema);
+  border: 1px solid rgba(91, 100, 112, 0.2);
+  border-radius: 8px;
+  padding: var(--espacio-md);
+  margin-bottom: var(--espacio-md);
+  position: relative; 
+}
+
+.tarjeta-servicio img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Etiqueta "Nuevo" */
+.etiqueta-nuevo {
+  position: absolute;
+  top: var(--espacio-md);
+  right: var(--espacio-md);
+  background-color: var(--naranja-pedal);
+  color: #ffffff;
+  font-family: var(--fuente-titulos);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.25rem var(--espacio-sm);
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+/* TABLAS DE TARIFAS */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--espacio-lg);
+  background-color: #ffffff;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+caption {
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  color: var(--azul-noche);
+  margin-bottom: var(--espacio-sm);
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+th, td {
+  padding: var(--espacio-md);
+  border-bottom: 1px solid rgba(91, 100, 112, 0.15);
+  text-align: left;
+}
+
+th {
+  background-color: var(--azul-noche);
+  color: var(--crema);
+  font-family: var(--fuente-titulos);
+}
+
+/* FORMULARIO DE RESERVAS */
+fform {
+  background-color: #ffffff;
+  padding: var(--espacio-lg);
+  border-radius: 8px;
+  border: 1px solid rgba(91, 100, 112, 0.2);
+}
+
+form p {
+  margin-bottom: var(--espacio-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+form p:has(input[type="radio"]),
+form p:has(input[type="checkbox"]) {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem; 
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+  cursor: pointer;
+}
+
+label {
+  font-weight: 600;
+  color: var(--azul-noche);
+  margin-bottom: var(--espacio-sm);
+}
+
+form input[type="radio"] + label,
+form input[type="checkbox"] + label {
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+label {
+  font-weight: 600;
+  color: var(--azul-noche);
+  margin-bottom: var(--espacio-sm);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--gris-asfalto);
+  border-radius: 4px;
+  font-family: var(--fuente-texto);
+  font-size: 1rem;
+  color: var(--gris-asfalto);
+  background-color: var(--crema);
+}
+
+fieldset {
+  border: 1px solid var(--gris-asfalto);
+  border-radius: 6px;
+  padding: var(--espacio-md);
+  margin-bottom: var(--espacio-md);
+}
+
+legend {
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  color: var(--azul-noche);
+  padding: 0 var(--espacio-sm);
+}
+
+/* Botones de acción y llamada a la acción (CTA) */
+button[type="submit"],
+.btn-cta {
+  background-color: var(--verde-ruta);
+  color: #ffffff;
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  padding: var(--espacio-md) var(--espacio-lg);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+button[type="submit"]:hover,
+.btn-cta:hover {
+  background-color: #155c3c; /* Tono verde ligeramente más oscuro */
+}
+
+/* Whatssapsito*/
+.whatsapp-flotante {
+  position: fixed;
+  bottom: var(--espacio-lg);
+  right: var(--espacio-lg);
+  background-color: #25D366; /* Color oficial de WhatsApp */
+  color: #ffffff;
+  padding: var(--espacio-sm) var(--espacio-md);
+  border-radius: 50px;
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-flotante:hover {
+  transform: scale(1.05);
+  color: #ffffff;
+}
+
+/* PIE DE PÁGINA*/
+footer {
+  background-color: var(--azul-noche);
+  color: var(--crema);
+  text-align: center;
+  padding: var(--espacio-lg);
+  margin-top: auto;
+}
+
+footer a {
+  color: var(--naranja-pedal);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

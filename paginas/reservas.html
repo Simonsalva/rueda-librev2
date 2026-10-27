@@ -3,28 +3,34 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rueda Libre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap">
+  <link rel="stylesheet" href="/home/cohorte8/Simon/rueda-libre/CSS/styles.css">
   <title>Reservas</title>
 </head>
+<header>
+  <nav class="menu-container">
+    <ul id="menu">
+      <li><a href="../index.html" class="menu-btn">Inicio</a></li>
+      <li><a href="tarifas.html" class="menu-btn">Tarifas</a></li>
+      <li><a href="reservas.html" class="menu-btn">Reservas</a></li>
+    </ul>
+  </nav>
+</header>
 
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="../index.html">Vuelve al inicio</a></li>
-        <li><a href="tarifas.html">Accede a las tarifas</a></li>
-      </ul>
-    </nav>
-  </header>
 
+  <!-- Formulario -->
   <main>
     <section>
       <h3>Horario de atención</h3>
       <dl>
-        <dt>Lunes a viernes</dt>
-        <dd>7:00 a. m. a 7:00 p. m.</dd>
+        <dt>Lunes a viernes </dt>
+        <dt>7:00 a. m. a 7:00 p. m.</dt>
         <dt>Sábados, domingos y festivos</dt>
-        <dd>6:00 a. m. a 2:00 p. m.</dd>
+        <dt>6:00 a. m. a 2:00 p. m.</dt>
       </dl>
     </section>
     <section>
@@ -34,7 +40,7 @@
         <p>
           <label for="name">
             <span>Nombre:</span>
-            <strong><abbr title="required min">*</abbr></strong>
+            <strong><abbr title="required min"></abbr></strong>
           </label>
           <input type="text" id="name" name="username" required minlength="3" />
         </p>
@@ -47,13 +53,13 @@
         <p>
           <label for="mail">
             <span>Correo electrónico:</span>
-            <strong><abbr title="required">*</abbr></strong>
+            <strong><abbr title="required"></abbr></strong>
           </label>
           <input type="email" id="mail" name="usermail" required />
         </p>
         <p>
           <label for="celular">Numero de celular: </label>
-          <strong><abbr title="required">*</abbr></strong>
+          <strong><abbr title="required"></abbr></strong>
           <input type="tel" id="celular" name="celular" required pattern="3[0-9]{9}"
             title="Debe tener 10 dígitos y empezar por 3 (Ej: 3123456789)" />
         </p>
@@ -66,26 +72,20 @@
           </p>
           <p>
             <label for="tipo de bicicleta"> Tipo de bicicleta</label>
-            <select id="tipo de bicicleta" name="Seleccione tipo de bicicleta" <option value="ninguno">Ninguno</option>
+            <select id="tipo de bicicleta" name="Seleccione tipo de bicicleta" required</option>
               <option value="Urbana">Urbana</option>
               <option value="Montaña">Montaña</option>
               <option value="Electrica">Electrica</option>
             </select>
           </p>
-
           <p>
-            <input type="radio" id="plan-hora" name="plan" value="1-hora" required>
-            <label for="plan-hora">1 hora</label>
+            <label for="Plan"> Plan</label>
+            <select id="Plan" name="Plan" <option value="ninguno">Ninguno </option>
+              <option value="1 hora">1 hora</option>
+              <option value="Medio día (4h)">Medio día (4h)</option>
+              <option value="Día completo">Día completo</option>
+            </select>
           </p>
-          <p>
-            <input type="radio" id="plan-medio" name="plan" value="medio-dia" required>
-            <label for="plan-medio">Medio dia (4h)</label>
-          </p>
-          <p>
-            <input type="radio" id="plan-dia" name="plan" value="dia-completo" required>
-            <label for="plan-dia">Dia completo</label>
-          </p>
-
 
           <p>
             <label for="cantidad">Cantidad de bicicletas</label>
@@ -124,8 +124,8 @@
   <a href="https://wa.me/573000000000" class="whatsapp-flotante" target="_blank" rel="noopener">WhatsApp</a>
 
   <footer>
-    <h4>Correo de contacto</h4>
-    <a href="mailto:correo.hola@ruedalibre.example">Escribenos a nuestro correo electronico</a>
+    <p>Correo de contacto:</p>
+    <a href="mailto:correo.hola@ruedalibre.example">Escribenos a nuestro correo electronico correo.hola@ruedalibre.example </a>
     <p><strong>2026</strong></p>
   </footer>
 </body>

@@ -1,31 +1,48 @@
-Url. http://127.0.0.1:5500/index.html
-Protocolo: http
-Host: firefox.localhost
-Puerto: 5500
-Ruta: /index.html
-Metodo de petición: GET
-Código de estado: 304 Not Modified
+Mi Bitácora de Rueda Libre v1.0 
 
+Estado del servidor local:
 
-/promociones.html
-Código: 404 Not Found
+    [http://127.0.0.1:5500/index.html](http://127.0.0.1:5500/index.html) (¡Vivo en Live Server!)
 
-Roles:
-HTML: define la estructura y el contenido de la página web
-CSS:Son las cualidades visuales y esteticas de la página web, modifican el archivo HTML cuando se realiza un cambio estetico.
-JavaScript: Añade interactividad y dinamismo de la página web.
+    Protocolo: http | Host: firefox.localhost | Puerto: 5500 | Ruta: /index.html
+
+    Método de petición: GET | Código de estado: 304 Not Modified (Ahí andaba refrescando la página a cada rato).
+
+    Epic fail temporal: Me tiró un 404 Not Found en /promociones.html (toca revisar si dejé algún enlace viejo volando por ahí).
 
 
 
-Hice todo el ultimo dia
+Mis notas mentales de lo que hace cada cosa:
+
+    HTML: Es el esqueleto, lo que define la estructura y el contenido bruto de la página web. Si no está bien armado, lo demás se cae.
+
+    CSS: Son las cualidades visuales y estéticas. Le da vida y color al HTML, y lo mejor es que cualquier cambio estético ahí se refleja al instante sin tocar el esqueleto.
 
 
+El diario de la caida a la locura: "Hice todo el último día"
+Día 1,2....3: ¡A correr se dijo!
 
 
+Dia 1.
+    El caos inicial: Inicio de la bitacora con la información básica de la consola en el Liveview. Tenía los tres archivos sueltos (index.html, tarifas.html y reservas.html) y me tocó organizar las carpetas, poner las rutas bien porque nada conectaba al principio, y pelear con el Live Server. 
+    
 
+Dia 2.
+    Estructura y tablas: Armé el contenido de la página de inicio, llené las tablas de tarifas con sus <th> y <caption>, y monté el formulario de reservas con todos los juguetes (required, pattern para el celular que empiece por 3, fechas, etc.). El formulario me sacó un poquito la piedra con los inputs, pero quedó validando bien.
+    
+    NO SE POR QUE NO ME DAN LAS REFS!!!
+    
+    Ah ya vi, importante, hay dos tipos de comillas, siempre usar las rectas.
+    
+    Ahora ya se usar <form>, esta chevere para tener todo organizado. Bien!
+    
+    Había escogido botones como mi seleccion para el form, pero nunca logré que quedaran centrados y bonitos, por lo que decidí decantarme por un menu desplegable con <label><select><option>.
 
+Dia 3.
+    El CSS salvador: Creé la carpeta css/styles.css, llamé a Google Fonts (Montserrat y Open Sans) y me puse a declarar las variables del manual de marca (--verde-ruta, --naranja-pedal, etc.). Por medio de Gemini le pedí que me guiara pero todo lo hice de manera manual y fui personalizando lo que me gustaba y lo que no.
 
+    El drama del selector y la especificidad: Un compañero había dejado una regla toda rara (#menu a) que chocaba con la clase .activo. Obvio, la clase no funcionaba y me tocó usar DevTools para descubrir el enredo de especificidad (el ID gana por goleada). Lo resolví sin meter trampa con !important, sino alineando bien los selectores.
 
+    Caja, posición y a correr: Metí el box-sizing: border-box para que no se me desconfigurara nada, organicé las tarjetas de servicios, puse la etiqueta flotante de "Nuevo" con position: absolute, y el botón de WhatsApp abajo con position: fixed para que lo acompañe a uno en todo el scroll.
 
-
-
+    Cierre: Al final limpié un poco el CSS por secciones, comprobé con Tab que el teclado se moviera bien por los campos (accesibilidad al 100%), hice commit, push, y... ¡V1.0 publicada! 🚲💨

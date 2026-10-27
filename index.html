@@ -1,57 +1,68 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Rueda Libre</title>
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/styles.css">
 </head>
-<main>
 
-  <head>
-    <meta charset="UTF-8">
-    <title>Rueda Libre</title>
-  </head>
+<body>
 
-  <body>
+  <!-- Menu -->
+  <header>
     <nav class="menu-container">
       <ul id="menu">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="paginas/tarifas.html">Tarifas</a></li>
-        <li><a href="paginas/reservas.html">Reservas</a></li>
+        <li><a href="index.html" class="menu-btn">Inicio</a></li>
+        <li><a href="paginas/tarifas.html" class="menu-btn">Tarifas</a></li>
+        <li><a href="paginas/reservas.html" class="menu-btn">Reservas</a></li>
       </ul>
     </nav>
-  </body>
-  </head>
-  </body>
-  <h1>Rueda Libre | Alquiler de bicicletas en Medellín</h1>
-  <p>Bienvenidos a Rueda Libre, donde encontraras la bicicleta de tus sueños para que te caigas pero de manera comoda.
-  </p>
-  </body>
-  </head>
+  </header>
 
-  <body>
+  <!-- Contenido -->
+  <main>
+    <h1>Rueda Libre | Alquiler de bicicletas en Medellín</h1>
+    <p>Bienvenidos a Rueda Libre, donde encontraras la bicicleta de tus sueños para que te caigas pero de manera comoda.</p>
+
     <h1>Quienes Somos</h1>
-    <p>Somos una empresa comprometida contigo. Nuestro compromiso es darte la mejor herramienta para que puedas
-      disfrutar de este Hobbie tan maravilloso como lo es el montar bicicleta.</p>
-  </body>
-  </a>
-  <br>
+    <p>Somos una empresa comprometida contigo. Nuestro compromiso es darte la mejor herramienta para que puedas disfrutar de este Hobbie tan maravilloso como lo es el montar bicicleta.</p>
 
-  <body>
-    <h1>Quienes Somos</h1>
-    <p>Somos una empresa comprometida contigo. Nuestro compromiso es darte la mejor herramienta para que puedas
-      disfrutar de este Hobbie tan maravilloso como lo es el montar bicicleta.</p>
-  </body>
-  </head>
-
-  <body>
     <h1>Nuestros Servicios</h1>
     <p>Ofrecemos servicios de alquiler de bicicletas en Medellín.</p>
-  </body>
 
-  <body>
     <h1>Sedes</h1>
     <p>Contamos con sedes en diferentes zonas de la ciudad.</p>
-  </body>
-</main>
+  </main>
+
+  <!-- Script para marcar el botón activo -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      let pathActual = window.location.pathname;
+      
+      if (pathActual.endsWith('/') || pathActual === '') {
+        pathActual = 'index.html';
+      }
+
+      const enlaces = document.querySelectorAll("#menu .menu-btn");
+
+      enlaces.forEach(enlace => {
+        const hrefEnlace = enlace.getAttribute("href");
+        if (pathActual.endsWith(hrefEnlace)) {
+          enlace.classList.add("activo");
+        }
+      });
+    });
+  </script>
+  <footer>
+    <p>Correo de contacto:</p>
+    <a href="mailto:correo.hola@ruedalibre.example">Escribenos a nuestro correo electronico correo.hola@ruedalibre.example </a>
+    <p><strong>2026</strong></p>
+  </footer>
+
+</body>
 
 </html>
