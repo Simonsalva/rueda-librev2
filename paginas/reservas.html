@@ -3,147 +3,115 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Rueda Libre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservas | Rueda Libre</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
-  <title>Reservas</title>
 </head>
-<!-- Menu -->
-<header>
-  <div style="text-align: left;">
-    <a href="../index.html">
-      <img src="../img/logo2.png" alt="loguito" width="150px">
-    </a>
-  </div>
-  <nav class="menu-container">
-    <ul id="menu">
-      <li><a href="../index.html" class="menu-btn">Inicio</a></li>
-      <li><a href="tarifas.html" class="menu-btn">Tarifas y rutas</a></li>
-      <li><a href="reservas.html" class="menu-btn">Reservas</a></li>
-    </ul>
-  </nav>
-</header>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    let pathActual = window.location.pathname;
-
-    if (pathActual.endsWith('/') || pathActual === '') {
-      pathActual = 'index.html';
-    }
-
-    const enlaces = document.querySelectorAll("#menu .menu-btn");
-
-    enlaces.forEach(enlace => {
-      const hrefEnlace = enlace.getAttribute("href");
-      if (pathActual.endsWith(hrefEnlace)) {
-        enlace.classList.add("activo");
-      }
-    });
-  });
-</script>
 
 <body>
+  <!-- Menú -->
+  <header>
+    <a href="../index.html">
+      <img src="../img/logo2.png" alt="Logo de Rueda Libre">
+    </a>
+    <nav class="menu-container">
+      <ul id="menu">
+        <li><a href="../index.html" class="menu-btn">Inicio</a></li>
+        <li><a href="tarifas.html" class="menu-btn">Tarifas y rutas</a></li>
+        <li><a href="reservas.html" class="menu-btn">Reservas</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- Formulario -->
   <main>
     <section>
-      <h3>Horario de atención</h3>
+      <h2>Horario de atención</h2>
       <dl>
-        <dt>Lunes a viernes </dt>
-        <dt>7:00 a. m. a 7:00 p. m.</dt>
+        <dt>Lunes a viernes</dt>
+        <dd>7:00 a. m. a 7:00 p. m.</dd>
         <dt>Sábados, domingos y festivos</dt>
-        <dt>6:00 a. m. a 2:00 p. m.</dt>
+        <dd>6:00 a. m. a 2:00 p. m.</dd>
       </dl>
     </section>
-    <section>
-      <form action="#" method="POST">
-        <h2>Reserva tu bicicleta</h2>
-        </fieldset>
-        <p>
-          <label for="name">
-            <span>Nombre:</span>
-            <strong><abbr title="required min"></abbr></strong>
-          </label>
-          <input type="text" id="name" name="username" required minlength="3" />
-        </p>
-        <p>
-          <label for="documento">Numero de documento</label>
-          <input type="text" id="documento" name="documento" inputmode="numeric" required pattern="[0-9]{6,10}"
-            title="Solo numeros entre 6 y 10 digitos">
 
+    <section>
+      <h2>Reserva tu bicicleta</h2>
+      <form action="#" method="POST">
+        <p>
+          <label for="nombre">Nombre <abbr title="obligatorio">*</abbr></label>
+          <input type="text" id="nombre" name="nombre" required minlength="3">
         </p>
         <p>
-          <label for="mail">
-            <span>Correo electrónico:</span>
-            <strong><abbr title="required"></abbr></strong>
-          </label>
-          <input type="email" id="mail" name="usermail" required />
+          <label for="documento">Número de documento <abbr title="obligatorio">*</abbr></label>
+          <input type="text" id="documento" name="documento" inputmode="numeric" required pattern="[0-9]{6,10}"
+            title="Solo números, entre 6 y 10 dígitos">
         </p>
         <p>
-          <label for="celular">Numero de celular: </label>
-          <strong><abbr title="required"></abbr></strong>
+          <label for="correo">Correo electrónico <abbr title="obligatorio">*</abbr></label>
+          <input type="email" id="correo" name="correo" required>
+        </p>
+        <p>
+          <label for="celular">Número de celular <abbr title="obligatorio">*</abbr></label>
           <input type="tel" id="celular" name="celular" required pattern="3[0-9]{9}"
-            title="Debe tener 10 dígitos y empezar por 3 (Ej: 3123456789)" />
+            title="Debe tener 10 dígitos y empezar por 3 (ej.: 3123456789)">
         </p>
 
         <fieldset>
           <legend>Plan</legend>
           <p>
-            <label for="fecha"> Fecha de alquiler</label>
-            <input type="date" id="fecha" name="fecha de alquiler" min="2026-11-01" max="2026-12-31" required>
+            <label for="fecha">Fecha de alquiler</label>
+            <input type="date" id="fecha" name="fecha" min="2026-11-01" max="2026-12-31" required>
           </p>
           <p>
-            <label for="tipo de bicicleta"> Tipo de bicicleta</label>
-            <select id="tipo de bicicleta" name="Seleccione tipo de bicicleta" required</option>
-              <option value="Urbana">Urbana</option>
-              <option value="Montaña">Montaña</option>
-              <option value="Electrica">Electrica</option>
+            <label for="tipo-bicicleta">Tipo de bicicleta</label>
+            <select id="tipo-bicicleta" name="tipo-bicicleta" required>
+              <option value="urbana">Urbana</option>
+              <option value="montana">Montaña</option>
+              <option value="electrica">Eléctrica</option>
             </select>
           </p>
           <p>
-            <label for="Plan"> Plan</label>
-            <select id="Plan" name="Plan" <option value="ninguno">Ninguno </option>
-              <option value="1 hora">1 hora</option>
-              <option value="Medio día (4h)">Medio día (4h)</option>
-              <option value="Día completo">Día completo</option>
+            <label for="plan">Duración</label>
+            <select id="plan" name="plan" required>
+              <option value="1-hora">1 hora</option>
+              <option value="medio-dia">Medio día (4 h)</option>
+              <option value="dia-completo">Día completo</option>
             </select>
           </p>
-
           <p>
             <label for="cantidad">Cantidad de bicicletas</label>
             <input type="number" id="cantidad" name="cantidad" value="1" min="1" max="6">
           </p>
-
           <p>
             <label for="recorrido">Recorrido guiado</label>
             <select id="recorrido" name="recorrido">
               <option value="ninguno">Ninguno</option>
-              <option value="rio-y-parques">Rio y Parques</option>
+              <option value="rio-parques">Río Parques</option>
               <option value="sabores-de-barrio">Sabores de Barrio</option>
               <option value="reto-las-palmas">Reto Las Palmas</option>
             </select>
           </p>
         </fieldset>
+
         <p>
-          <label for="comentarios">Comentarios</label><br>
-          <textarea id="comentarios" name="comentarios" rows="4" cols="40" maxlength="300"></textarea>
+          <label for="comentarios">Comentarios</label>
+          <textarea id="comentarios" name="comentarios" rows="4" maxlength="300"></textarea>
         </p>
+
         <fieldset>
           <legend>Confirmación</legend>
           <p>
             <input type="checkbox" id="politicas" name="politicas" value="aceptadas" required>
-            <label for="politicas">Acepto las politicas de alquiler</label>
+            <label for="politicas">Acepto las políticas de alquiler</label>
           </p>
         </fieldset>
 
         <button type="submit">Enviar reserva</button>
       </form>
     </section>
-    </section>
-
   </main>
 
   <a href="https://wa.me/573000000000" class="whatsapp-flotante" target="_blank" rel="noopener">WhatsApp</a>
@@ -161,11 +129,32 @@
 
     <div class="footer-col">
       <h4>Horario</h4>
-      <p>Lunes a sábado: 7:00 a. m. – 6:00 p. m.</p>
+      <p>Lun. a vie.: 7:00 a. m. – 7:00 p. m.</p>
+      <p>Sáb., dom. y festivos: 6:00 a. m. – 2:00 p. m.</p>
     </div>
 
     <p class="footer-copy">© 2026 Rueda Libre</p>
   </footer>
+
+  <!-- Script para marcar el botón activo -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      let pathActual = window.location.pathname;
+
+      if (pathActual.endsWith('/') || pathActual === '') {
+        pathActual = 'index.html';
+      }
+
+      const enlaces = document.querySelectorAll("#menu .menu-btn");
+
+      enlaces.forEach(enlace => {
+        const hrefEnlace = enlace.getAttribute("href");
+        if (pathActual.endsWith(hrefEnlace)) {
+          enlace.classList.add("activo");
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>

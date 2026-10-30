@@ -46,6 +46,7 @@ body {
 /* Encabezados agrupados */
 h1,
 h2,
+h3,
 h4,
 h5,
 h6 {
@@ -67,24 +68,30 @@ main {
 /* NAVEGACIÓN Y ESTADOS */
 header {
   background-color: var(--azul-noche);
-  padding: var(--espacio-md) var(--espacio-lg);
+  padding: var(--espacio-md);
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  gap: var(--espacio-md);
+  gap: var(--espacio-sm);
 }
 
 header h3 {
-  font-size: 4.rem;
+  font-size: 2.5rem;
   color: #ffffff;
-  margin: 1;
+  margin: 0;
+}
+
+header img {
+  width: 120px;
+  display: block;
 }
 
 /* Menú horizontal sin viñetas */
 #menu {
   display: flex;
-  gap: var(--espacio-md);
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--espacio-sm);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -109,33 +116,44 @@ header h3 {
 .menu-btn.activo {
   color: #F39A2B;
   font-weight: bold;
-  border-bottom: 2px solid #007bff;
+  border-bottom: 2px solid var(--naranja-pedal);
   /* Una línea bonita abajo */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .mi-imagen {
   width: 100px;
   height: auto;
   display: block;
-  margin: 1 auto;
+  margin: 0 auto;
 }
 
+/* COMPONENTES: TARJETAS DE LA FLOTA */
 .flota {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: 1fr;        
   gap: var(--espacio-lg);
 }
 
 .tarjeta-servicio {
-  display:flex;
+  display: flex;
   flex-direction: column;
   background-color: #ffffff;
+  border: 1px solid rgba(91, 100, 112, 0.2);
+  border-radius: 8px;
+  padding: var(--espacio-md);
+  position: relative;
 }
 
 .tarjeta-servicio img {
   width: 100%;
   height: 180px;
-  object-fit:cover;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
 .tarjeta-servicio .btn-cta {
@@ -147,22 +165,6 @@ header h3 {
   font-weight: 700;
   font-size: 1.2rem;
   color: var(--verde-ruta);
-}
-
-/* COMPONENTES: TARJETAS Y SECCIONES */
-.tarjeta-servicio {
-  background-color: var(--crema);
-  border: 1px solid rgba(91, 100, 112, 0.2);
-  border-radius: 8px;
-  padding: var(--espacio-md);
-  margin-bottom: var(--espacio-md);
-  position: relative;
-}
-
-.tarjeta-servicio img {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
 }
 
 /* Etiqueta "Nuevo" */
@@ -202,7 +204,8 @@ caption {
 
 th,
 td {
-  padding: var(--espacio-md);
+  padding: var(--espacio-sm);
+  font-size: 0.85rem;
   border-bottom: 1px solid rgba(91, 100, 112, 0.15);
   text-align: left;
 }
@@ -252,12 +255,6 @@ form input[type="checkbox"]+label {
   margin-bottom: 0;
   font-weight: normal;
   cursor: pointer;
-}
-
-label {
-  font-weight: 600;
-  color: var(--azul-noche);
-  margin-bottom: var(--espacio-sm);
 }
 
 input[type="text"],
@@ -342,10 +339,11 @@ footer {
   background-color: var(--azul-noche);
   color: var(--crema);
   display: flex;
-  flex-wrap: wrap;                
-  justify-content: space-around; 
-  gap: var(--espacio-lg);
-  padding: var(--espacio-lg);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--espacio-md);
+  padding: var(--espacio-lg) var(--espacio-md);
   margin-top: auto;
 }
 
@@ -369,10 +367,42 @@ footer a:hover {
 }
 
 .footer-copy {
-  width: 100%;                  
+  width: 100%;
   text-align: center;
   margin: 0;
   padding-top: var(--espacio-md);
   border-top: 1px solid rgba(250, 246, 239, 0.2);
   font-size: 0.85rem;
+}
+
+/* ===== TABLET: 768px en adelante ===== */
+@media (min-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--espacio-md) var(--espacio-lg);
+  }
+
+  .flota {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  th,
+  td {
+    padding: var(--espacio-md);
+    font-size: 1rem;
+  }
+
+  footer {
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left;
+  }
+}
+
+/* ===== ESCRITORIO: 1200px en adelante ===== */
+@media (min-width: 1200px) {
+  .flota {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

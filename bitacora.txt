@@ -2,4 +2,11 @@
 Me encuentro comenzando a aplicar lo que estoy aprendiendo en "semana 2, día 1", no se como llegué hasta aquí pero les iré contando.
 
 30 octubre
-Estuve ensayando muchas combinaciones para que el footer quedara centrado y bonito, donde incluyera marca, contacto y horarios y derechos reservados, pero en vista de que ninguna funcionaba, le hice la petición a Claude para que me ayudara a encontrar la respuesta, pase de tener 3 secciones de footer en CSS a 6, entonces aprendí puedo simplificar código por medio de CSS y solo organizar la información en HTML haciendo columnas y darles su respectivo estilo, organización en cuestion estetica y separación por medio de CSS.
+Estuve ensayando muchas combinaciones para que el footer quedara centrado y bonito, donde incluyera marca, contacto, horarios y derechos reservados, pero en vista de que ninguna funcionaba, le hice la petición a Claude para que me ayudara a encontrar la respuesta, pase de tener 3 secciones de footer en CSS a 6, entonces aprendí que puedo simplificar código por medio de CSS y solo organizar la información en HTML haciendo columnas y darles su respectivo estilo, organización en cuestion estetica y separación por medio de CSS.
+
+Problemas que resolví hoy:
+Las tarjetas tocaban los bordes porque la sección estaba fuera de <main>.
+Las fotos se deformaban o tenían zoom; se resolvió con object-fit.
+La tabla se desbordaba a 360px; se resolvió reduciendo el padding y la letra en móvil.
+
+Lista la compatibilidad tanto de tablet como de celular, en horizontal y vertical!
