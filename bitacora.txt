@@ -1,12 +1,43 @@
+Mi Bitácora de Rueda Libre - Semana 2
+
 28 de octubre 2026:
 Me encuentro comenzando a aplicar lo que estoy aprendiendo en "semana 2, día 1", no se como llegué hasta aquí pero les iré contando.
 
 30 octubre
 Estuve ensayando muchas combinaciones para que el footer quedara centrado y bonito, donde incluyera marca, contacto, horarios y derechos reservados, pero en vista de que ninguna funcionaba, le hice la petición a Claude para que me ayudara a encontrar la respuesta, pase de tener 3 secciones de footer en CSS a 6, entonces aprendí que puedo simplificar código por medio de CSS y solo organizar la información en HTML haciendo columnas y darles su respectivo estilo, organización en cuestion estetica y separación por medio de CSS.
 
-Problemas que resolví hoy:
-Las tarjetas tocaban los bordes porque la sección estaba fuera de <main>.
-Las fotos se deformaban o tenían zoom; se resolvió con object-fit.
-La tabla se desbordaba a 360px; se resolvió reduciendo el padding y la letra en móvil.
-
 Lista la compatibilidad tanto de tablet como de celular, en horizontal y vertical!
+
+
+Dia 1. Flexbox, Grid y responsive
+
+    MiniReto 1: Encabezado y pie con Flexbox.
+    El footer quedó en tres columnas (marca, contacto y horario), organizadas en el HTML y con el estilo en CSS.
+    Al achicar la ventana el encabezado hace: (pendiente)
+    Al achicar la ventana el pie hace: (pendiente)
+
+    MiniReto 2: La flota con Grid.
+    Puse la flota con repeat(auto-fit, minmax(260px, 1fr)), sin media queries, y el navegador decide solo cuántas caben.
+    En DevTools vi: a 1280 px 4 columnas, a 900 px 2 y a 500 px 1.
+    Agregué la Tándem como séptimo modelo y se acomodó sola, sin tocar el CSS.
+    Me equivoqué copiando literal el "____" dentro del minmax(), el navegador ignoró la línea y la flota quedó en una sola columna. También dejé una media query de 1200 px sin cerrar al final del CSS.
+
+    MiniReto 3: Layout en dos dimensiones.
+    (pendiente)
+
+    MiniReto 4: Mobile-first.
+    Problemas que resolví:
+    1. Las tarjetas tocaban los bordes porque la sección estaba fuera de <main>, la metí dentro y quedaron centradas.
+    2. Las fotos se deformaban o tenían zoom, se resolvió con object-fit.
+    3. La tabla se desbordaba a 360px, se resolvió reduciendo el padding y la letra en móvil. (verificar en DevTools)
+
+    Por qué Flexbox o Grid en cada parte:
+    Encabezado: (pendiente)
+    Pie: (pendiente)
+    Flota: (pendiente)
+    Dentro de las tarjetas: (pendiente)
+    Portada, galería de rutas, reservas y fila del formulario: (cuando haga el MiniReto 3)
+
+
+4 de noviembre
+Hice git pull en la carpeta que no era (ruedalibre-actividad, la V1) jajaja. Aprendí que el pull solo actualiza el repo al que está conectada la carpeta, para traer la V2 tocaba hacer git clone.
