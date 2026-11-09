@@ -75,12 +75,6 @@ header {
   gap: var(--espacio-sm);
 }
 
-header h3 {
-  font-size: 2.5rem;
-  color: #ffffff;
-  margin: 0;
-}
-
 header img {
   width: 120px;
   display: block;
@@ -97,20 +91,12 @@ header img {
   padding: 0;
 }
 
-.mi-texto {
-  font-size: 18px;
-  text-align: left;
-}
-
 /* Enlace activo de la página actual */
 .menu-btn {
   padding: 10px 20px;
   text-decoration: none;
   color: #FAF6EF;
-  display: inline-block;
-  transition: all 0.35s;
-  flex-wrap: wrap;
-  flex-direction: right;
+  transition: color 0.35s;
 }
 
 .menu-btn.activo {
@@ -123,13 +109,6 @@ header img {
 img {
   max-width: 100%;
   height: auto;
-}
-
-.mi-imagen {
-  width: 100px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
 }
 
 /* COMPONENTES: TARJETAS DE LA FLOTA */
@@ -390,7 +369,14 @@ footer a:hover {
 
   footer {
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
+    align-items: flex-start;
     text-align: left;
+  }
+
+  .footer-col {
+    flex: 1;
+    min-width: 200px;
   }
 }
