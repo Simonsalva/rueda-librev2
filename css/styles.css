@@ -1,49 +1,31 @@
-/* =================================================_
-   1. VARIABLES GLOBALES Y CONFIGURACIÓN DE MARCA
+/* =================================================
+   RUEDA LIBRE v2.0-beta · IDENTIDAD VISUAL
+   La distribución (columnas, filas, espacios, alineación)
+   la resuelve Bootstrap. Aquí solo queda la marca.
+   Esta hoja se carga DESPUÉS de Bootstrap.
 ================================================= */
+
+/* 1. Variables de marca */
 :root {
-  /* Colores de marca */
   --verde-ruta: #1E7A4F;
   --naranja-pedal: #F39A2B;
   --azul-noche: #14213D;
   --crema: #FAF6EF;
   --gris-asfalto: #5B6470;
 
-  /* Tipografías */
   --fuente-titulos: 'Montserrat', sans-serif;
   --fuente-texto: 'Open Sans', sans-serif;
-
-  /* Escala de espaciado */
-  --espacio-sm: 0.5rem;
-  /* 8px aprox */
-  --espacio-md: 1rem;
-  /* 16px aprox */
-  --espacio-lg: 2rem;
-  /* 32px aprox */
 }
 
-/* ESTILOS BASE Y HERENCIA */
-/* Control del modelo de caja (MiniReto 11) */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
+/* 2. Tipografía y colores base */
+/* Conflicto: las clases .h4/.h5 de Bootstrap le quitaban el azul y la negrita
+   a los títulos; por eso en el HTML el tamaño se da con fs-4, fs-5 y fs-6 */
 body {
   font-family: var(--fuente-texto);
-  font-size: 1rem;
-  font-weight: 400;
   color: var(--gris-asfalto);
   background-color: var(--crema);
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
-/* Encabezados agrupados */
 h1,
 h2,
 h3,
@@ -53,79 +35,41 @@ h6 {
   font-family: var(--fuente-titulos);
   font-weight: 700;
   color: var(--azul-noche);
-  margin-top: 0;
 }
 
-/* Contenedor principal centrado (MiniReto 11) */
-main {
-  max-width: 1200px;
-  width: 90%;
-  margin: 0 auto;
-  padding: var(--espacio-lg) 0;
-  flex: 1;
-}
-
-/* NAVEGACIÓN Y ESTADOS */
+/* 3. Encabezado y menú */
 header {
   background-color: var(--azul-noche);
-  padding: var(--espacio-md);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--espacio-sm);
 }
 
 header img {
   width: 120px;
-  display: block;
 }
 
-/* Menú horizontal sin viñetas */
-#menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--espacio-sm);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* Enlace activo de la página actual */
 .menu-btn {
   padding: 10px 20px;
   text-decoration: none;
-  color: #FAF6EF;
+  color: var(--crema);
   transition: color 0.35s;
 }
 
+/* Conflicto: Bootstrap pinta a:hover de azul; se fija el color de marca */
+.menu-btn:hover {
+  color: var(--naranja-pedal);
+}
+
 .menu-btn.activo {
-  color: #F39A2B;
+  color: var(--naranja-pedal);
   font-weight: bold;
   border-bottom: 2px solid var(--naranja-pedal);
-  /* Una línea bonita abajo */
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* COMPONENTES: TARJETAS DE LA FLOTA */
-.flota {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));       
-  gap: var(--espacio-lg);
-}
-
+/* 4. Tarjetas de la flota */
 .tarjeta-servicio {
-  display: flex;
-  flex-direction: column;
   background-color: #ffffff;
   border: 1px solid rgba(91, 100, 112, 0.2);
   border-radius: 8px;
-  padding: var(--espacio-md);
-  position: relative;
+  padding: 1rem;
 }
 
 .tarjeta-servicio img {
@@ -135,10 +79,6 @@ img {
   border-radius: 4px;
 }
 
-.tarjeta-servicio .btn-cta {
-  margin-top: auto;
-}
-
 .precio {
   font-family: var(--fuente-titulos);
   font-weight: 700;
@@ -146,44 +86,42 @@ img {
   color: var(--verde-ruta);
 }
 
-/* Etiqueta "Nuevo" */
 .etiqueta-nuevo {
   position: absolute;
-  top: var(--espacio-md);
-  right: var(--espacio-md);
+  top: 1rem;
+  right: 1rem;
   background-color: var(--naranja-pedal);
   color: #ffffff;
   font-family: var(--fuente-titulos);
   font-size: 0.85rem;
   font-weight: 700;
-  padding: 0.25rem var(--espacio-sm);
+  padding: 0.25rem 0.5rem;
   border-radius: 4px;
   text-transform: uppercase;
 }
 
-/* TABLAS DE TARIFAS */
+/* 5. Tablas de tarifas (estilo de la semana 1) */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: var(--espacio-lg);
   background-color: #ffffff;
-  text-align: center;
   border-radius: 10px;
   overflow: hidden;
 }
 
+/* Conflicto: Bootstrap pone el caption abajo de la tabla */
 caption {
+  caption-side: top;
   font-family: var(--fuente-titulos);
   font-weight: 700;
   color: var(--azul-noche);
-  margin-bottom: var(--espacio-sm);
   text-align: left;
   font-size: 1.2rem;
 }
 
 th,
 td {
-  padding: var(--espacio-sm);
+  padding: 0.5rem;
   font-size: 0.85rem;
   border-bottom: 1px solid rgba(91, 100, 112, 0.15);
   text-align: left;
@@ -195,45 +133,42 @@ th {
   font-family: var(--fuente-titulos);
 }
 
-/* FORMULARIO DE RESERVAS */
+@media (min-width: 768px) {
+  th,
+  td {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* 6. Formulario de reservas */
 form {
   background-color: #ffffff;
-  padding: var(--espacio-lg);
+  padding: 2rem;
   border-radius: 8px;
   border: 1px solid rgba(91, 100, 112, 0.2);
 }
 
 form p {
-  margin-bottom: var(--espacio-sm);
   display: flex;
   flex-direction: column;
 }
 
-form p:has(input[type="radio"]),
 form p:has(input[type="checkbox"]) {
   flex-direction: row;
   align-items: center;
   gap: 0.5rem;
 }
 
-form input[type="radio"],
-form input[type="checkbox"] {
-  width: auto;
-  margin: 0;
-  cursor: pointer;
-}
-
 label {
   font-weight: 600;
   color: var(--azul-noche);
-  margin-bottom: var(--espacio-sm);
+  margin-bottom: 0.5rem;
 }
 
-form input[type="radio"]+label,
-form input[type="checkbox"]+label {
+form input[type="checkbox"] + label {
   margin-bottom: 0;
   font-weight: normal;
-  cursor: pointer;
 }
 
 input[type="text"],
@@ -247,8 +182,6 @@ textarea {
   padding: 0.75rem;
   border: 1px solid var(--gris-asfalto);
   border-radius: 4px;
-  font-family: var(--fuente-texto);
-  font-size: 1rem;
   color: var(--gris-asfalto);
   background-color: var(--crema);
 }
@@ -256,83 +189,80 @@ textarea {
 fieldset {
   border: 1px solid var(--gris-asfalto);
   border-radius: 6px;
-  padding: var(--espacio-md);
-  margin-bottom: var(--espacio-md);
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
 
 legend {
+  float: none;
+  width: auto;
   font-family: var(--fuente-titulos);
   font-weight: 700;
+  font-size: 1.1rem;
   color: var(--azul-noche);
-  padding: 0 var(--espacio-sm);
+  padding: 0 0.5rem;
 }
 
-/* Botones de acción y llamada a la acción (CTA) */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+a:focus {
+  outline: 3px solid var(--naranja-pedal);
+  outline-offset: 2px;
+}
+
+/* 7. Botones de llamada a la acción */
 button[type="submit"],
 .btn-cta {
+  display: inline-block;
   background-color: var(--verde-ruta);
   color: #ffffff;
   font-family: var(--fuente-titulos);
   font-weight: 700;
-  padding: var(--espacio-md) var(--espacio-lg);
+  padding: 1rem 2rem;
   border: none;
   border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  display: inline-block;
   text-align: center;
   text-decoration: none;
+  transition: background-color 0.2s ease;
 }
 
+/* Conflicto: sin color aquí, Bootstrap vuelve azul el texto al pasar el mouse */
 button[type="submit"]:hover,
 .btn-cta:hover {
   background-color: #155c3c;
-  /* Tono verde ligeramente más oscuro */
+  color: #ffffff;
 }
 
-/* Whatssapsito*/
+/* 8. WhatsApp flotante */
 .whatsapp-flotante {
   position: fixed;
-  bottom: var(--espacio-lg);
-  right: var(--espacio-lg);
+  bottom: 2rem;
+  right: 2rem;
   background-color: #25D366;
-  /* Color oficial de WhatsApp */
   color: #ffffff;
-  padding: var(--espacio-sm) var(--espacio-md);
+  padding: 0.5rem 1rem;
   border-radius: 50px;
   font-family: var(--fuente-titulos);
   font-weight: 700;
   text-decoration: none;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  transition: transform 0.2s ease;
 }
 
 .whatsapp-flotante:hover {
-  transform: scale(1.05);
   color: #ffffff;
 }
 
-/* PIE DE PÁGINA*/
+/* 9. Pie de página */
 footer {
   background-color: var(--azul-noche);
   color: var(--crema);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: var(--espacio-md);
-  padding: var(--espacio-lg) var(--espacio-md);
-  margin-top: auto;
 }
 
-.footer-col h4 {
+footer h4 {
   color: var(--naranja-pedal);
-  margin-bottom: var(--espacio-sm);
-}
-
-.footer-col p {
-  margin: 0;
 }
 
 footer a {
@@ -346,37 +276,5 @@ footer a:hover {
 }
 
 .footer-copy {
-  width: 100%;
-  text-align: center;
-  margin: 0;
-  padding-top: var(--espacio-md);
   border-top: 1px solid rgba(250, 246, 239, 0.2);
-  font-size: 0.85rem;
-}
-
-/* ===== TABLET: 768px en adelante ===== */
-@media (min-width: 768px) {
-  header {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: var(--espacio-md) var(--espacio-lg);
-  }
-
-  th,td {
-    padding: var(--espacio-md);
-    font-size: 1rem;
-  }
-
-  footer {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .footer-col {
-    flex: 1;
-    min-width: 200px;
-  }
 }

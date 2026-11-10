@@ -13,13 +13,17 @@ Dia 1. Flexbox, Grid y responsive
 
     MiniReto 1: Encabezado y pie con Flexbox.
     El footer quedó en tres columnas (marca, contacto y horario), organizadas en el HTML y con el estilo en CSS.
-    Al achicar la ventana el encabezado hace: (pendiente)
-    Al achicar la ventana el pie hace: (pendiente)
+    El menú ya no usa inline-block, los enlaces se separan solo con gap y bajan de línea con flex-wrap cuando no caben.
+    En tablet el pie queda en fila con las tres columnas alineadas arriba (align-items: flex-start).
+    Unifiqué el horario del footer en las tres páginas, antes index y tarifas decían otro.
+    Al achicar la ventana el encabezado hace: (escribir lo que veo en DevTools)
+    Al achicar la ventana el pie hace: (escribir lo que veo en DevTools)
 
     MiniReto 2: La flota con Grid.
     Puse la flota con repeat(auto-fit, minmax(260px, 1fr)), sin media queries, y el navegador decide solo cuántas caben.
     En DevTools vi: a 1280 px 4 columnas, a 900 px 2 y a 500 px 1.
     Agregué la Tándem como séptimo modelo y se acomodó sola, sin tocar el CSS.
+    Cambié los alt de las fotos para que describan la imagen y no repitan el título, pensando en los lectores de pantalla.
     Me equivoqué copiando literal el "____" dentro del minmax(), el navegador ignoró la línea y la flota quedó en una sola columna. También dejé una media query de 1200 px sin cerrar al final del CSS.
 
     MiniReto 3: Layout en dos dimensiones.
@@ -41,3 +45,44 @@ Dia 1. Flexbox, Grid y responsive
 
 4 de noviembre
 Hice git pull en la carpeta que no era (ruedalibre-actividad, la V1) jajaja. Aprendí que el pull solo actualiza el repo al que está conectada la carpeta, para traer la V2 tocaba hacer git clone.
+
+
+9 de noviembre
+Venía de una semana pesada entre la incapacidad, el trabajo nuevo y las clases. Revisé contra los criterios qué me faltaba del Día 1 y del Día 2.
+Cerré los detalles del MiniReto 1 (menú solo con gap, pie alineado arriba, horario igual en todo el sitio). Usé a Claude como tutor durante la semana y, por falta de tiempo, hoy le pedí que aplicara esos ajustes del MiniReto 1; los revisé para entender qué cambió y por qué.
+Pendiente: MiniReto 3 (portada, galería de rutas, reservas 2:1), cierre del MiniReto 4 con GitHub Pages, y todo el Día 2 de Bootstrap.
+
+
+Dia 2. Introducción a Bootstrap: grillas y utilidades
+
+10 de noviembre
+Por tiempo (trabajo nuevo y clases) le pedí a Claude que hiciera la migración a Bootstrap 5.3 para poder entregar. Revisé lo que cambió para entenderlo:
+    Bootstrap se carga primero por CDN y mi styles.css después, para que mis colores y fuentes ganen en la cascada. El bundle de JavaScript va una sola vez antes de cerrar el body.
+    Todas las grillas siguen container > row > col.
+
+    MiniReto 5: pruebas/catalogo-bootstrap.html, la flota con 7 modelos sin styles.css.
+    col-12 col-sm-6 col-lg-4 col-xl-3 con g-4: 1 columna en celular, 2 desde sm, 3 desde lg y 4 desde xl.
+
+    MiniReto 6: sección "¿Por qué Rueda Libre?" y la franja para reservar, solo con clases utilitarias (p-4, bg-white, border, rounded, text-center, h-100, bg-success, btn btn-light).
+
+    MiniReto 7 y 8: las tres páginas migradas.
+    Inicio: portada en dos columnas desde lg, flota, galería de 3 rutas y beneficios.
+    Tarifas: tablas en 8 columnas y la información complementaria en 4 desde lg. Conservé los estilos de tabla de la semana 1.
+    Reservas: formulario 8 y contacto 4 desde md, documento y celular en la misma fila con la grilla. Se conservan required, pattern, min, max y minlength.
+
+    Conflictos entre mis estilos y Bootstrap:
+    1. Bootstrap pone el caption debajo de la tabla, se arregló con caption-side: top.
+    2. Al pasar el mouse por los enlaces, Bootstrap los pinta de azul; se fijó el color en .menu-btn:hover y .btn-cta:hover.
+    3. Las clases .h4 y .h5 de Bootstrap le quitaban el azul y la negrita a mis títulos, se cambiaron por fs-4, fs-5 y fs-6 que solo cambian el tamaño.
+    Todo se resolvió sin !important.
+
+    Comparativa CSS propio vs Bootstrap:
+    Líneas de styles.css: 382 en la v1.5, 280 en la v2.0-beta (ya sin reglas de distribución).
+    Flota: en la v1.5 unas 10 líneas de CSS de distribución (grid, flex en la tarjeta, margin-top auto en el botón); en Bootstrap 0 líneas, solo clases en el HTML.
+    Tiempo invertido: (pendiente, rehacer yo la flota con Bootstrap y cronometrarlo)
+    Lo que me dio Bootstrap sin esfuerzo: columnas responsive sin escribir media queries.
+    Lo que perdí: control fino, el HTML queda lleno de clases y hay que pelear con sus estilos por defecto.
+    Conclusión: (pendiente, escribirla yo)
+
+    Pendiente: probar las tres páginas en DevTools a 360, 768 y 1280 px y publicar la v2.0-beta en GitHub Pages.
+

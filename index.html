@@ -7,91 +7,206 @@
   <title>Rueda Libre</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <!-- 1. Primero Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- 2. Después la hoja propia, para que la marca gane en la cascada -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body>
-  <!-- Menu -->
-  <header>
+<body class="d-flex flex-column min-vh-100">
+  <!-- Menú -->
+  <header class="d-flex flex-column flex-md-row justify-content-md-between align-items-center gap-2 px-3 px-md-4 py-3">
     <a href="index.html">
-      <img src="img/logo2.png" alt="Logo de Rueda Libre">
+      <img src="img/logo2.png" alt="Logo de Rueda Libre" class="d-block">
     </a>
-    <nav class="menu-container">
-      <ul id="menu">
+    <nav>
+      <ul id="menu" class="list-unstyled d-flex flex-wrap justify-content-center gap-2 m-0">
         <li><a href="index.html" class="menu-btn">Inicio</a></li>
         <li><a href="paginas/tarifas.html" class="menu-btn">Tarifas y rutas</a></li>
         <li><a href="paginas/reservas.html" class="menu-btn">Reservas</a></li>
       </ul>
     </nav>
   </header>
-  <!-- Contenido -->
-  <main>
-    <p>Bienvenidos a Rueda Libre, donde encontraras la bicicleta de tus sueños para que te caigas pero de manera comoda.
-    </p>
 
-    <h1>Quienes Somos</h1>
-    <p>Somos una empresa comprometida contigo. Nuestro compromiso es darte la mejor herramienta para que puedas
-      disfrutar de este Hobbie tan maravilloso como lo es el montar bicicleta.</p>
+  <main class="container py-4">
+    <!-- Portada: texto a la izquierda, foto a la derecha -->
+    <section class="row g-4 align-items-center py-4">
+      <div class="col-12 col-lg-6">
+        <h1>Rueda Libre</h1>
+        <p class="lead">Bienvenidos a Rueda Libre, donde encontrarás la bicicleta de tus sueños para recorrer Medellín.</p>
+        <a href="paginas/reservas.html" class="btn-cta">Reservar ahora</a>
+      </div>
+      <div class="col-12 col-lg-6">
+        <img src="img/Urbana_Clasica.jpeg" alt="Bicicleta urbana lista para recorrer la ciudad" class="img-fluid rounded">
+      </div>
+    </section>
 
-    <h1>Nuestros Servicios</h1>
-    <p>Ofrecemos servicios de alquiler de bicicletas en Medellín.</p>
+    <section class="row g-4 py-4">
+      <div class="col-12 col-md-4">
+        <h2 class="fs-4">Quiénes somos</h2>
+        <p>Somos una empresa comprometida contigo. Nuestro compromiso es darte la mejor herramienta para que disfrutes de montar en bicicleta.</p>
+      </div>
+      <div class="col-12 col-md-4">
+        <h2 class="fs-4">Nuestros servicios</h2>
+        <p>Ofrecemos servicios de alquiler de bicicletas en Medellín.</p>
+      </div>
+      <div class="col-12 col-md-4">
+        <h2 class="fs-4">Sedes</h2>
+        <p>Contamos con sedes en diferentes zonas de la ciudad.</p>
+      </div>
+    </section>
 
-    <h1>Sedes</h1>
-    <p>Contamos con sedes en diferentes zonas de la ciudad.</p>
+    <section class="py-4">
+      <h2 class="mb-4">Nuestra flota</h2>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+          <article class="tarjeta-servicio h-100 d-flex flex-column">
+            <img src="img/Urbana_Clasica.jpeg" alt="Bicicleta urbana clásica" class="img-fluid mb-3">
+            <h3 class="fs-5">Urbana Clásica</h3>
+            <p>Cómoda y liviana para las ciclorrutas.</p>
+            <p class="precio">$10.000 / hora</p>
+            <a href="paginas/reservas.html" class="btn-cta mt-auto">Reservar</a>
+          </article>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+          <article class="tarjeta-servicio h-100 d-flex flex-column">
+            <img src="img/Urbana_Plegable.jpeg" alt="Bicicleta urbana plegable" class="img-fluid mb-3">
+            <h3 class="fs-5">Urbana Plegable</h3>
+            <p>Se dobla en segundos; ideal para combinar con el metro.</p>
+            <p class="precio">$12.000 / hora</p>
+            <a href="paginas/reservas.html" class="btn-cta mt-auto">Reservar</a>
+          </article>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+          <article class="tarjeta-servicio h-100 d-flex flex-column">
+            <img src="img/Montana_Trail.jpeg" alt="Bicicleta de montaña Trail" class="img-fluid mb-3">
+            <h3 class="fs-5">Montaña Trail</h3>
+            <p>Suspensión delantera y 21 cambios para las subidas.</p>
+            <p class="precio">$15.000 / hora</p>
+            <a href="paginas/reservas.html" class="btn-cta mt-auto">Reservar</a>
+          </article>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+          <article class="tarjeta-servicio h-100 d-flex flex-column">
+            <img src="img/Gravel_Aventura.jpeg" alt="Bicicleta Gravel Aventura" class="img-fluid mb-3">
+            <h3 class="fs-5">Gravel Aventura</h3>
+            <p>Para rutas mixtas de asfalto y destapado.</p>
+            <p class="precio">$18.000 / hora</p>
+            <a href="paginas/reservas.html" class="btn-cta mt-auto">Reservar</a>
+          </article>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+          <article class="tarjeta-servicio h-100 d-flex flex-column">
+            <img src="img/Bicicleta_electrica_urbana.jpeg" alt="Bicicleta eléctrica urbana" class="img-fluid mb-3">
+            <h3 class="fs-5">Eléctrica Urbana</h3>
+            <p>Asistencia eléctrica con 45 km de autonomía.</p>
+            <p class="precio">$25.000 / hora</p>
+            <a href="paginas/reservas.html" class="btn-cta mt-auto">Reservar</a>
+          </article>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+          <article class="tarjeta-servicio h-100 d-flex flex-column">
+            <img src="img/Infantil.jpeg" alt="Bicicleta infantil" class="img-fluid mb-3">
+            <h3 class="fs-5">Infantil</h3>
+            <p>Para niños de 6 a 10 años.</p>
+            <p class="precio">$8.000 / hora</p>
+            <a href="paginas/reservas.html" class="btn-cta mt-auto">Reservar</a>
+          </article>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+          <article class="tarjeta-servicio h-100 d-flex flex-column">
+            <img src="img/Tandem.jpg" alt="Bicicleta tándem para dos personas" class="img-fluid mb-3">
+            <h3 class="fs-5">Tándem</h3>
+            <p>Para dos personas; perfecta para pasear en pareja.</p>
+            <p class="precio">$20.000 / hora</p>
+            <a href="paginas/reservas.html" class="btn-cta mt-auto">Reservar</a>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <section class="py-4">
+      <h2 class="mb-4">Nuestras rutas</h2>
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <article class="tarjeta-servicio h-100">
+            <h3 class="fs-5">Río Parques</h3>
+            <p class="mb-1">12 km · 2 h</p>
+            <p class="mb-0">Nivel: Fácil</p>
+          </article>
+        </div>
+        <div class="col-12 col-md-4">
+          <article class="tarjeta-servicio h-100">
+            <h3 class="fs-5">Sabores de Barrio</h3>
+            <p class="mb-1">18 km · 3 h</p>
+            <p class="mb-0">Nivel: Medio</p>
+          </article>
+        </div>
+        <div class="col-12 col-md-4">
+          <article class="tarjeta-servicio h-100">
+            <h3 class="fs-5">Reto Las Palmas</h3>
+            <p class="mb-1">25 km · 4 h</p>
+            <p class="mb-0">Nivel: Difícil</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <section>
-      <h2> Nuestra flota </h2>
-      <div class="flota">
-        <article class="tarjeta-servicio"><img src="img/Urbana_Clasica.jpeg" alt="Bicicleta urbana clásica">
-          <h3> Urbana Clásica </h3>
-          <p> Cómoda y liviana para las ciclorrutas. </p>
-          <p class="precio"> $10.000 / hora </p>
-          <a href="paginas/reservas.html" class="btn-cta"> Reservar</a>
-        </article>
-        <article class="tarjeta-servicio"><img src="img/Urbana_Plegable.jpeg" alt="Bicicleta urbana plegable">
-          <h3> Urbana Plegable </h3>
-          <p> Se dobla en segundos; ideal para combinar con el metro. </p>
-          <p class="precio">$12.000 / hora</p>
-          <a href="paginas/reservas.html" class="btn-cta"> Reservar</a>
-        </article>
-        <article class="tarjeta-servicio"><img src="img/Montana_Trail.jpeg" alt="Bicicleta de montaña Trail">
-          <h3> Montaña Trail </h3>
-          <p> Suspensión delantera y 21 cambios para las subidas. </p>
-          <p class="precio"> $15.000 / hora </p>
-          <a href="paginas/reservas.html" class="btn-cta"> Reservar</a>
-        </article>
-        <article class="tarjeta-servicio"><img src="img/Gravel_Aventura.jpeg" alt="Bicicleta Gravel Aventura">
-          <h3> Gravel Aventura </h3>
-          <p> Para rutas mixtas de asfalto y destapado. </p>
-          <p class="precio"> $18.000 / hora </p>
-          <a href="paginas/reservas.html" class="btn-cta"> Reservar</a>
-        </article>
-        <article class="tarjeta-servicio"><img src="img/Bicicleta_electrica_urbana.jpeg" alt="Bicicleta eléctrica urbana">
-          <h3> Eléctrica Urbana </h3>
-          <p> Asistencia eléctrica con 45 km de autonomía. </p>
-          <p class="precio">$25.000 / hora </p>
-          <a href="paginas/reservas.html" class="btn-cta"> Reservar</a>
-        </article>
-        <article class="tarjeta-servicio"><img src="img/Infantil.jpeg" alt="Bicicleta infantil">
-          <h3> Infantil </h3>
-          <p> Para niños de 6 a 10 años. </p>
-          <p class="precio"> $8.000 / hora </p>
-          <a href="paginas/reservas.html" class="btn-cta"> Reservar</a>
-        </article>
-        <article class="tarjeta-servicio">
-          <img src="img/Tandem.jpg" alt="Bicicleta tándem para dos personas">
-          <h3>Tándem</h3>
-          <p>Para dos personas; perfecta para pasear en pareja.</p>
-          <p class="precio">$20.000 / hora</p>
-          <a href="paginas/reservas.html" class="btn-cta">Reservar</a>
-        </article>
+    <section class="py-5">
+      <h2 class="text-center mb-4">¿Por qué Rueda Libre?</h2>
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <div class="h-100 p-4 bg-white border rounded text-center">
+            <h3 class="fs-5 mb-2">Bicicletas revisadas</h3>
+            <p class="mb-0">Cada bicicleta pasa por revisión antes de salir.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="h-100 p-4 bg-white border rounded text-center">
+            <h3 class="fs-5 mb-2">Sedes en la ciudad</h3>
+            <p class="mb-0">Recoge y devuelve en la sede que te quede cerca.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="h-100 p-4 bg-white border rounded text-center">
+            <h3 class="fs-5 mb-2">Rutas guiadas</h3>
+            <p class="mb-0">Recorridos para todos los niveles, de fácil a difícil.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Franja de llamada a la acción -->
+      <div class="mt-5 p-4 p-md-5 bg-success text-white rounded-3 text-center">
+        <h2 class="fs-4 text-white mb-3">¿Listo para rodar?</h2>
+        <a href="paginas/reservas.html" class="btn btn-light btn-lg">Reserva tu bicicleta</a>
       </div>
     </section>
   </main>
-  <!-- Script para marcar el botón activo -->
+
+  <footer class="mt-auto">
+    <div class="container py-4">
+      <div class="row g-4 text-center text-md-start">
+        <div class="col-12 col-md-4">
+          <h4 class="fs-6 mb-2">Rueda Libre</h4>
+          <p class="mb-0">Alquiler de bicicletas en Medellín</p>
+        </div>
+        <div class="col-12 col-md-4">
+          <h4 class="fs-6 mb-2">Contacto</h4>
+          <a href="mailto:correo.hola@ruedalibre.example">correo.hola@ruedalibre.example</a>
+        </div>
+        <div class="col-12 col-md-4">
+          <h4 class="fs-6 mb-2">Horario</h4>
+          <p class="mb-0">Lun. a vie.: 7:00 a. m. – 7:00 p. m.</p>
+          <p class="mb-0">Sáb., dom. y festivos: 6:00 a. m. – 2:00 p. m.</p>
+        </div>
+        <div class="col-12">
+          <p class="footer-copy text-center small pt-3 mb-0">© 2026 Rueda Libre</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       let pathActual = window.location.pathname;
@@ -110,26 +225,8 @@
       });
     });
   </script>
-  <footer>
-    <div class="footer-col">
-      <h4>Rueda Libre</h4>
-      <p>Alquiler de bicicletas en Medellín</p>
-    </div>
-
-    <div class="footer-col">
-      <h4>Contacto</h4>
-      <a href="mailto:correo.hola@ruedalibre.example">correo.hola@ruedalibre.example</a>
-    </div>
-
-    <div class="footer-col">
-      <h4>Horario</h4>
-      <p>Lun. a vie.: 7:00 a. m. – 7:00 p. m.</p>
-      <p>Sáb., dom. y festivos: 6:00 a. m. – 2:00 p. m.</p>
-    </div>
-
-    <p class="footer-copy">© 2026 Rueda Libre</p>
-  </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
