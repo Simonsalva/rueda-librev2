@@ -4,38 +4,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rueda Libre: alquiler de bicicletas y recorridos guiados en Medellín.">
   <title>Tarifas y rutas | Rueda Libre</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <!-- 1. Primero Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-  <!-- Menú -->
-  <header class="d-flex flex-column flex-md-row justify-content-md-between align-items-center gap-2 px-3 px-md-4 py-3">
-    <a href="../index.html">
-      <img src="../img/logo2.png" alt="Logo de Rueda Libre" class="d-block">
-    </a>
-    <nav>
-      <ul id="menu" class="list-unstyled d-flex flex-wrap justify-content-center gap-2 m-0">
-        <li><a href="../index.html" class="menu-btn">Inicio</a></li>
-        <li><a href="tarifas.html" class="menu-btn">Tarifas y rutas</a></li>
-        <li><a href="reservas.html" class="menu-btn">Reservas</a></li>
-      </ul>
-    </nav>
-  </header>
+  <nav class="navbar navbar-expand-lg navbar-dark rl-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">
+        <img src="../img/logo2.png" alt="Rueda Libre, ir al inicio" width="110">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+        aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html"><i class="bi bi-house me-1" aria-hidden="true"></i>Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="tarifas.html"><i class="bi bi-cash-coin me-1" aria-hidden="true"></i>Tarifas y rutas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reservas.html"><i class="bi bi-calendar-check me-1" aria-hidden="true"></i>Reservas</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
   <main class="container py-4">
+    <h1 class="mb-4">Tarifas y rutas</h1>
     <div class="row g-4">
-      <!-- Tablas: 8 de 12 columnas desde lg -->
       <div class="col-12 col-lg-8">
         <section class="mb-4">
-          <h2>Tarifas de alquiler</h2>
+          <h2 class="rl-titulo-seccion">Tarifas de alquiler</h2>
           <div class="table-responsive">
             <table>
               <caption>Precios de alquiler por categoría</caption>
@@ -71,8 +82,8 @@
           </div>
         </section>
 
-        <section>
-          <h2>Rutas guiadas</h2>
+        <section id="recorridos">
+          <h2 class="rl-titulo-seccion">Recorridos guiados</h2>
           <div class="table-responsive">
             <table>
               <caption>Recorridos disponibles</caption>
@@ -87,7 +98,7 @@
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">Río Parques</th>
+                  <th scope="row">Río y Parques</th>
                   <td>12 km</td>
                   <td>2 h</td>
                   <td>Fácil</td>
@@ -112,63 +123,51 @@
           </div>
         </section>
       </div>
+        <p class="mt-3">Los recorridos salen los sábados y domingos a las 7:00 a. m.</p>
+        <a href="reservas.html" class="btn btn-primary">Reservar ahora</a>
+      </div>
 
-      <!-- Información complementaria: 4 de 12 columnas desde lg -->
       <aside class="col-12 col-lg-4">
-        <div class="tarjeta-servicio">
-          <h2 class="fs-5">Antes de rodar</h2>
-          <ul class="mb-3">
-            <li>Casco y candado incluidos.</li>
-            <li>Presenta tu documento al recoger la bicicleta.</li>
-            <li>Las rutas guiadas incluyen acompañante.</li>
+        <div class="p-4 bg-white border rounded">
+          <h2 class="fs-5">Qué llevar</h2>
+          <ul>
+            <li>Ropa cómoda</li>
+            <li>Agua</li>
+            <li>Protector solar</li>
+            <li>Documento de identidad</li>
           </ul>
-          <a href="reservas.html" class="btn-cta d-block">Reservar</a>
+          <p class="mb-0"><strong>Todas las tarifas incluyen casco y candado.</strong></p>
         </div>
       </aside>
     </div>
   </main>
 
-  <footer class="mt-auto">
+  <a href="https://wa.me/573000000000" class="rl-whatsapp btn btn-success rounded-pill" target="_blank" rel="noopener"
+    aria-label="Escríbenos por WhatsApp"><i class="bi bi-whatsapp fs-4" aria-hidden="true"></i></a>
+
+  <footer class="rl-pie mt-auto">
     <div class="container py-4">
-      <div class="row g-4 text-center text-md-start">
+      <div class="row g-4">
         <div class="col-12 col-md-4">
-          <h4 class="fs-6 mb-2">Rueda Libre</h4>
+          <h2 class="rl-pie-titulo">Rueda Libre</h2>
           <p class="mb-0">Alquiler de bicicletas en Medellín</p>
         </div>
         <div class="col-12 col-md-4">
-          <h4 class="fs-6 mb-2">Contacto</h4>
-          <a href="mailto:correo.hola@ruedalibre.example">correo.hola@ruedalibre.example</a>
+          <h2 class="rl-pie-titulo">Contacto</h2>
+          <p class="mb-0"><i class="bi bi-envelope me-1" aria-hidden="true"></i><a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
         </div>
         <div class="col-12 col-md-4">
-          <h4 class="fs-6 mb-2">Horario</h4>
-          <p class="mb-0">Lun. a vie.: 7:00 a. m. – 7:00 p. m.</p>
+          <h2 class="rl-pie-titulo">Horario</h2>
+          <p class="mb-0"><i class="bi bi-clock me-1" aria-hidden="true"></i>Lun. a vie.: 7:00 a. m. – 7:00 p. m.</p>
           <p class="mb-0">Sáb., dom. y festivos: 6:00 a. m. – 2:00 p. m.</p>
         </div>
         <div class="col-12">
-          <p class="footer-copy text-center small pt-3 mb-0">© 2026 Rueda Libre</p>
+          <p class="text-center small border-top border-secondary pt-3 mb-0">© 2026 Rueda Libre</p>
         </div>
       </div>
     </div>
   </footer>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      let pathActual = window.location.pathname;
-
-      if (pathActual.endsWith('/') || pathActual === '') {
-        pathActual = 'index.html';
-      }
-
-      const enlaces = document.querySelectorAll("#menu .menu-btn");
-
-      enlaces.forEach(enlace => {
-        const hrefEnlace = enlace.getAttribute("href");
-        if (pathActual.endsWith(hrefEnlace)) {
-          enlace.classList.add("activo");
-        }
-      });
-    });
-  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

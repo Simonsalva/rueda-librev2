@@ -1,280 +1,186 @@
-/* =================================================
-   RUEDA LIBRE v2.0-beta · IDENTIDAD VISUAL
-   La distribución (columnas, filas, espacios, alineación)
-   la resuelve Bootstrap. Aquí solo queda la marca.
-   Esta hoja se carga DESPUÉS de Bootstrap.
-================================================= */
+/* Rueda Libre v2.0: identidad de marca sobre Bootstrap */
 
-/* 1. Variables de marca */
+/* Colores de marca */
 :root {
   --verde-ruta: #1E7A4F;
+  --verde-oscuro: #155C3C;
   --naranja-pedal: #F39A2B;
   --azul-noche: #14213D;
   --crema: #FAF6EF;
   --gris-asfalto: #5B6470;
 
-  --fuente-titulos: 'Montserrat', sans-serif;
-  --fuente-texto: 'Open Sans', sans-serif;
-}
+  --fuente-titulos: 'Montserrat', Arial, sans-serif;
+  --fuente-texto: 'Open Sans', Arial, sans-serif;
 
-/* 2. Tipografía y colores base */
-/* Conflicto: las clases .h4/.h5 de Bootstrap le quitaban el azul y la negrita
-   a los títulos; por eso en el HTML el tamaño se da con fs-4, fs-5 y fs-6 */
-body {
-  font-family: var(--fuente-texto);
-  color: var(--gris-asfalto);
-  background-color: var(--crema);
+  /* Variables de Bootstrap con la marca */
+  --bs-primary: #1E7A4F;
+  --bs-primary-rgb: 30, 122, 79;
+  --bs-body-font-family: var(--fuente-texto);
+  --bs-body-color: #14213D;
+  --bs-body-bg: #FAF6EF;
+  --bs-link-color: #1E7A4F;
+  --bs-link-color-rgb: 30, 122, 79;
+  --bs-link-hover-color: #155C3C;
+  --bs-link-hover-color-rgb: 21, 92, 60;
+  --bs-border-radius: 0.5rem;
 }
 
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
+.display-5 {
   font-family: var(--fuente-titulos);
   font-weight: 700;
   color: var(--azul-noche);
 }
 
-/* 3. Encabezado y menú */
-header {
+/* Botón principal en Verde Ruta */
+.btn-primary {
+  --bs-btn-bg: var(--verde-ruta);
+  --bs-btn-border-color: var(--verde-ruta);
+  --bs-btn-hover-bg: var(--verde-oscuro);
+  --bs-btn-hover-border-color: var(--verde-oscuro);
+  --bs-btn-active-bg: var(--azul-noche);
+  --bs-btn-active-border-color: var(--azul-noche);
+  --bs-btn-focus-shadow-rgb: 30, 122, 79;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--verde-ruta);
+  --bs-btn-border-color: var(--verde-ruta);
+  --bs-btn-hover-bg: var(--verde-ruta);
+  --bs-btn-hover-border-color: var(--verde-ruta);
+  --bs-btn-active-bg: var(--verde-oscuro);
+  --bs-btn-active-border-color: var(--verde-oscuro);
+  --bs-btn-focus-shadow-rgb: 30, 122, 79;
+}
+
+/* Botón propio en Naranja Pedal: texto Azul Noche para cumplir contraste */
+.btn-naranja {
+  --bs-btn-color: var(--azul-noche);
+  --bs-btn-bg: var(--naranja-pedal);
+  --bs-btn-border-color: var(--naranja-pedal);
+  --bs-btn-hover-color: var(--azul-noche);
+  --bs-btn-hover-bg: #E08A1E;
+  --bs-btn-hover-border-color: #E08A1E;
+  --bs-btn-active-color: var(--azul-noche);
+  --bs-btn-active-bg: #C97A16;
+  --bs-btn-active-border-color: #C97A16;
+  --bs-btn-focus-shadow-rgb: 243, 154, 43;
+  font-weight: 700;
+}
+
+/* Clases propias */
+.rl-navbar {
   background-color: var(--azul-noche);
 }
 
-header img {
-  width: 120px;
-}
-
-.menu-btn {
-  padding: 10px 20px;
-  text-decoration: none;
+.rl-navbar .nav-link {
   color: var(--crema);
-  transition: color 0.35s;
 }
 
-/* Conflicto: Bootstrap pinta a:hover de azul; se fija el color de marca */
-.menu-btn:hover {
+.rl-navbar .nav-link:hover,
+.rl-navbar .nav-link:focus,
+.rl-navbar .nav-link.active {
   color: var(--naranja-pedal);
 }
 
-.menu-btn.activo {
-  color: var(--naranja-pedal);
-  font-weight: bold;
-  border-bottom: 2px solid var(--naranja-pedal);
+.rl-portada {
+  min-height: 60vh;
 }
 
-/* 4. Tarjetas de la flota */
-.tarjeta-servicio {
-  background-color: #ffffff;
-  border: 1px solid rgba(91, 100, 112, 0.2);
-  border-radius: 8px;
-  padding: 1rem;
+.rl-titulo-seccion {
+  border-left: 6px solid var(--naranja-pedal);
+  padding-left: 0.75rem;
 }
 
-.tarjeta-servicio img {
-  width: 100%;
-  height: 180px;
+.rl-card-img {
+  height: 11rem;
   object-fit: cover;
-  border-radius: 4px;
 }
 
-.precio {
+.rl-promo-img {
+  height: 20rem;
+  object-fit: cover;
+}
+
+.rl-promo-texto {
+  background-color: rgba(20, 33, 61, 0.85);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+}
+
+.rl-precio {
   font-family: var(--fuente-titulos);
   font-weight: 700;
-  font-size: 1.2rem;
   color: var(--verde-ruta);
 }
 
-.etiqueta-nuevo {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background-color: var(--naranja-pedal);
-  color: #ffffff;
-  font-family: var(--fuente-titulos);
-  font-size: 0.85rem;
-  font-weight: 700;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  text-transform: uppercase;
+.rl-pie {
+  background-color: var(--azul-noche);
+  color: var(--crema);
 }
 
-/* 5. Tablas de tarifas (estilo de la semana 1) */
+.rl-pie a {
+  color: var(--crema);
+}
+
+.rl-pie a:hover {
+  color: var(--naranja-pedal);
+}
+
+.rl-pie-titulo {
+  font-size: 1rem;
+  color: var(--naranja-pedal);
+}
+
+.rl-whatsapp {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1000;
+}
+
+/* Tablas (estilo de la semana 1) */
 table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #ffffff;
-  border-radius: 10px;
-  overflow: hidden;
+  background-color: #FFFFFF;
 }
 
-/* Conflicto: Bootstrap pone el caption abajo de la tabla */
 caption {
   caption-side: top;
   font-family: var(--fuente-titulos);
   font-weight: 700;
   color: var(--azul-noche);
-  text-align: left;
-  font-size: 1.2rem;
 }
 
 th,
 td {
   padding: 0.5rem;
   font-size: 0.85rem;
-  border-bottom: 1px solid rgba(91, 100, 112, 0.15);
-  text-align: left;
+  border: 1px solid var(--gris-asfalto);
 }
 
-th {
+thead th {
   background-color: var(--azul-noche);
   color: var(--crema);
-  font-family: var(--fuente-titulos);
 }
 
 @media (min-width: 768px) {
   th,
   td {
-    padding: 1rem;
+    padding: 0.75rem 1rem;
     font-size: 1rem;
   }
 }
 
-/* 6. Formulario de reservas */
-form {
-  background-color: #ffffff;
-  padding: 2rem;
-  border-radius: 8px;
-  border: 1px solid rgba(91, 100, 112, 0.2);
-}
-
-form p {
-  display: flex;
-  flex-direction: column;
-}
-
-form p:has(input[type="checkbox"]) {
-  flex-direction: row;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-label {
-  font-weight: 600;
-  color: var(--azul-noche);
-  margin-bottom: 0.5rem;
-}
-
-form input[type="checkbox"] + label {
-  margin-bottom: 0;
-  font-weight: normal;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="date"],
-input[type="number"],
-select,
-textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid var(--gris-asfalto);
-  border-radius: 4px;
-  color: var(--gris-asfalto);
-  background-color: var(--crema);
-}
-
-fieldset {
-  border: 1px solid var(--gris-asfalto);
-  border-radius: 6px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-
-legend {
-  float: none;
-  width: auto;
-  font-family: var(--fuente-titulos);
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--azul-noche);
-  padding: 0 0.5rem;
-}
-
-button:focus,
-input:focus,
-select:focus,
-textarea:focus,
-a:focus {
+/* Foco visible */
+a:focus-visible,
+button:focus-visible,
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
   outline: 3px solid var(--naranja-pedal);
   outline-offset: 2px;
-}
-
-/* 7. Botones de llamada a la acción */
-button[type="submit"],
-.btn-cta {
-  display: inline-block;
-  background-color: var(--verde-ruta);
-  color: #ffffff;
-  font-family: var(--fuente-titulos);
-  font-weight: 700;
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 4px;
-  text-align: center;
-  text-decoration: none;
-  transition: background-color 0.2s ease;
-}
-
-/* Conflicto: sin color aquí, Bootstrap vuelve azul el texto al pasar el mouse */
-button[type="submit"]:hover,
-.btn-cta:hover {
-  background-color: #155c3c;
-  color: #ffffff;
-}
-
-/* 8. WhatsApp flotante */
-.whatsapp-flotante {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background-color: #25D366;
-  color: #ffffff;
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
-  font-family: var(--fuente-titulos);
-  font-weight: 700;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-}
-
-.whatsapp-flotante:hover {
-  color: #ffffff;
-}
-
-/* 9. Pie de página */
-footer {
-  background-color: var(--azul-noche);
-  color: var(--crema);
-}
-
-footer h4 {
-  color: var(--naranja-pedal);
-}
-
-footer a {
-  color: var(--crema);
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: var(--naranja-pedal);
-  text-decoration: underline;
-}
-
-.footer-copy {
-  border-top: 1px solid rgba(250, 246, 239, 0.2);
 }

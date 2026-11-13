@@ -63,7 +63,13 @@ Por tiempo (trabajo nuevo y clases) le pedí a Claude que hiciera la migración 
     MiniReto 5: pruebas/catalogo-bootstrap.html, la flota con 7 modelos sin styles.css.
     col-12 col-sm-6 col-lg-4 col-xl-3 con g-4: 1 columna en celular, 2 desde sm, 3 desde lg y 4 desde xl.
 
-    MiniReto 6: sección "¿Por qué Rueda Libre?" y la franja para reservar, solo con clases utilitarias (p-4, bg-white, border, rounded, text-center, h-100, bg-success, btn btn-light).
+    MiniReto 6: sección "¿Por qué Rueda Libre?" con los cuatro beneficios (bicicletas revisadas, casco y candado, guías certificados y 3 sedes) y la franja "¿Listo para rodar?", solo con utilidades y sin CSS propio. La franja va en columna en celular y en fila desde md, y la imagen decorativa solo aparece desde md.
+    Cinco clases que busqué en la documentación:
+        flex-md-row: pone los elementos en fila desde 768 px.
+        d-none d-md-block: oculta algo en celular y lo muestra desde md.
+        gap-3: separa los hijos de un contenedor flex.
+        fw-bold: pone el texto en negrita.
+        text-decoration-none: le quita el subrayado a un enlace.
 
     MiniReto 7 y 8: las tres páginas migradas.
     Inicio: portada en dos columnas desde lg, flota, galería de 3 rutas y beneficios.
@@ -85,4 +91,50 @@ Por tiempo (trabajo nuevo y clases) le pedí a Claude que hiciera la migración 
     Conclusión: (pendiente, escribirla yo)
 
     Pendiente: probar las tres páginas en DevTools a 360, 768 y 1280 px y publicar la v2.0-beta en GitHub Pages.
+
+
+13 de noviembre · v1.5 completa en CSS propio
+Como la raíz del repo ya pasó a Bootstrap (v2.0-beta), dejé la versión del Día 1 completa en la carpeta v1.5/, con Flexbox, Grid y media queries, sin Bootstrap. Me apoyé en Claude para terminar el MiniReto 3 y el cierre del 4. Se ve en: (enlace de Pages)/v1.5/
+
+Decisiones Flexbox o Grid
+    Encabezado: Flexbox, porque es una sola fila (logo a un lado y menú al otro).
+    Pie: Flexbox, son tres bloques en una sola fila que bajan cuando no caben.
+    Portada: Grid con 1fr 1fr, porque son dos columnas y el texto se centra verticalmente con align-items.
+    Galería de rutas: Grid con repeat(3, 1fr), tres tarjetas en una fila.
+    Reservas: Grid con 2fr 1fr, formulario dos tercios y contacto un tercio.
+    Fila del formulario (documento y celular): Grid con 1fr 1fr para que los dos campos midan lo mismo.
+
+Puntos de cambio
+    Base (celular): todo en una columna, logo arriba y menú centrado debajo.
+    768 px: encabezado en fila, portada en dos columnas, documento y celular en la misma fila, tablas con más relleno y letra normal, pie en fila.
+    1200 px: rutas en tres columnas y reservas en 2:1.
+    La flota no necesita media query: auto-fit con minmax(16rem, 1fr) da 1 columna a 500 px, 3 a 900 px y 4 a 1280 px.
+
+Problemas responsive
+    1. La tabla de recorridos se salía a 360 px. Solución: en la base bajé el relleno y la letra de las celdas, y los subo desde 768 px.
+    2. Las fotos de las tarjetas tenían alturas distintas y se veían desordenadas. Solución: altura fija con object-fit: cover.
+    3. Los botones "Reservar" quedaban a distintas alturas. Solución: la tarjeta en columna con Flexbox y margin-top: auto en el botón.
+    (comprobar en DevTools a 360, 768 y 1280 px y en un celular real)
+
+
+Dia 3. Componentes y personalización de Bootstrap
+
+13 de noviembre
+Con apoyo de Claude, por el tiempo, se hicieron los MiniRetos 9 a 12. Lo que quedó:
+
+    MiniReto 9: navbar de Bootstrap en las tres páginas. Por debajo de 992 px aparece el botón de menú y desde lg se ven los enlaces. El data-bs-target="#menuPrincipal" coincide con el id del collapse. La página actual se marca con active y aria-current="page", ya no con la clase activo ni con el script. El bundle se carga una sola vez antes de cerrar el body.
+    Botones: btn-primary para reservar, btn-outline-primary para consultar (Ver tarifas, Ver recorridos) y btn-lg en la portada.
+
+    MiniReto 10: la flota y las rutas son card con card-img-top, card-body y h-100, así las de una misma fila miden lo mismo. Carrusel con las tres promociones, avance automático con data-bs-ride y controles con texto visually-hidden para lectores de pantalla. Borré de styles.css las reglas de .tarjeta-servicio que ya no se usaban.
+
+    MiniReto 11: formulario con form-control, form-select y form-check, validación visual con el script oficial de la documentación sin cambios, un mensaje de error por cada campo que explica cómo corregirlo, alerta para recordar el documento que se puede cerrar y modal con las cinco políticas que se abre desde el botón junto a la casilla. Se mantienen required, pattern, min, max y minlength.
+
+    MiniReto 12: en styles.css cambié las variables de Bootstrap (--bs-primary, --bs-primary-rgb, fuente del cuerpo, color de enlaces y radio de bordes) y las del botón principal a Verde Ruta. Creé btn-naranja con texto Azul Noche (7.2:1) porque blanco sobre naranja no pasa (2.22:1). Clases propias: rl-navbar, rl-portada, rl-titulo-seccion, rl-pie, rl-precio y rl-whatsapp. Bootstrap Icons en la navbar, el contacto, los beneficios y el WhatsApp; los decorativos llevan aria-hidden="true" y el botón de WhatsApp, que solo tiene ícono, lleva aria-label. Sin !important.
+    Capturas antes y después de personalizar en img/capturas/.
+
+Cierre de la semana
+    Pasé de la v1.0 de la semana 1 a una v1.5 con Flexbox, Grid y media queries, después a la v2.0-beta con la grilla de Bootstrap y al final a la v2.0 con componentes y mis colores.
+    Lo que más me costó: la especificidad cuando mis estilos chocaban con los de Bootstrap.
+    Lo que me llevo: Grid y Flexbox para entender cómo se arma un layout, y Bootstrap para ir más rápido sin perder la marca si se cambian sus variables.
+    (Pendiente: probar todo en un celular real y pegar el enlace de la v2.0)
 
